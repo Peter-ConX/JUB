@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-navy-dark: #020617;
+  --color-champagne: #f5e6c8;
+  --color-champagne-dark: #e8d4a8;
+  --color-champagne-muted: #faf3e4;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-champagne-muted);
+  color: var(--color-navy);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-champagne) 60%, white);
+  color: var(--color-navy);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--color-navy) 75%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, white 12%, transparent);
+}
+
+.glass-light {
+  background: color-mix(in srgb, white 70%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--color-champagne) 40%, transparent);
+}
+
+.text-gradient-champagne {
+  background: linear-gradient(135deg, #f5e6c8 0%, #fff8eb 50%, #e8d4a8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, #0f172a 85%, transparent) 0%,
+    color-mix(in srgb, #0f172a 55%, transparent) 50%,
+    color-mix(in srgb, #0f172a 75%, transparent) 100%
+  );
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-champagne) 60%, transparent),
+    transparent
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.btn-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}

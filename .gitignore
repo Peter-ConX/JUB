@@ -1,0 +1,17 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+.qodo/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies (any subproject)
+**/node_modules/
+
+# Next.js build output
+**/.next/
+**/out/
+**/.vercel/
