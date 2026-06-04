@@ -182,45 +182,30 @@ export function getWhatsAppUrl(text: string = defaultWhatsAppGreeting): string {
   return `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
-/** Event types for the enquiries form (aligned with hosted services). */
-export const enquiryEventTypes = [
-  "Wedding",
-  "Birthday",
-  "Child Naming",
-  "Marriage Anniversary",
-  "Retirement Celebration",
-  "Seminar",
-  "Political Party Meeting",
-  "End of Year Celebration",
-  "Fellowship / Prayer Meeting",
-  "Conference",
-  "Other",
-] as const;
-
 export function buildEnquiryMessage(data: {
-  name: string;
+  firstName: string;
+  lastName: string;
   phone: string;
   email: string;
-  eventType: string;
-  message: string;
+  enquiry: string;
 }): string {
+  const fullName = `${data.firstName} ${data.lastName}`.trim();
   return [
     "Hello Jubilee Event Center & Entertainment Hub,",
     "",
     "I would like to make an enquiry:",
     "",
-    `Name: ${data.name}`,
+    `Name: ${fullName}`,
     `Phone: ${data.phone}`,
     `Email: ${data.email}`,
-    `Event Type: ${data.eventType}`,
     "",
-    "Event Details:",
-    data.message,
+    "Enquiry:",
+    data.enquiry,
   ].join("\n");
 }
 
-export function buildEnquiryMailSubject(name: string, eventType: string): string {
-  return `Event Enquiry – ${eventType} – ${name}`.trim();
+export function buildEnquiryMailSubject(firstName: string, lastName: string): string {
+  return `Enquiry from ${firstName} ${lastName}`.trim();
 }
 
 export const aboutPoints = [

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
+import { getWhatsAppUrl, siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
   return (
@@ -62,7 +62,9 @@ export default function Hero() {
             className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <Link
-              href="#contact"
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-champagne px-8 py-4 text-sm font-semibold uppercase tracking-wider text-navy transition-all hover:bg-white hover:shadow-xl hover:shadow-champagne/20"
             >
               <CalendarDays className="h-4 w-4" />

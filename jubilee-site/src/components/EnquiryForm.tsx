@@ -6,7 +6,6 @@ import { CheckCircle2, Send } from "lucide-react";
 import {
   buildEnquiryMailSubject,
   buildEnquiryMessage,
-  enquiryEventTypes,
   getWhatsAppUrl,
   primaryEmail,
   siteConfig,
@@ -18,8 +17,7 @@ type FormFields = {
   lastName: string;
   phone: string;
   email: string;
-  eventType: string;
-  message: string;
+  enquiry: string;
 };
 
 const initialForm: FormFields = {
@@ -27,8 +25,7 @@ const initialForm: FormFields = {
   lastName: "",
   phone: "",
   email: "",
-  eventType: enquiryEventTypes[0],
-  message: "",
+  enquiry: "",
 };
 
 const inputClassName =
@@ -53,19 +50,18 @@ export default function EnquiryForm() {
       return;
     }
 
-    const name = `${form.firstName.trim()} ${form.lastName.trim()}`.trim();
     const payload = {
-      name,
+      firstName: form.firstName.trim(),
+      lastName: form.lastName.trim(),
       phone: form.phone.trim(),
       email: form.email.trim(),
-      eventType: form.eventType,
-      message: form.message.trim(),
+      enquiry: form.enquiry.trim(),
     };
 
     const bodyText = buildEnquiryMessage(payload);
     const whatsappUrl = getWhatsAppUrl(bodyText);
     const mailSubject = encodeURIComponent(
-      buildEnquiryMailSubject(payload.name, payload.eventType)
+      buildEnquiryMailSubject(payload.firstName, payload.lastName)
     );
     const mailBody = encodeURIComponent(bodyText);
     const mailtoUrl = `mailto:${primaryEmail}?subject=${mailSubject}&body=${mailBody}`;
@@ -206,36 +202,16 @@ export default function EnquiryForm() {
                   </div>
 
                   <div>
-                    <label htmlFor="enquiry-event-type" className={labelClassName}>
-                      Event Type <span className="text-champagne-dark">*</span>
-                    </label>
-                    <select
-                      id="enquiry-event-type"
-                      name="eventType"
-                      required
-                      value={form.eventType}
-                      onChange={(e) => updateField("eventType", e.target.value)}
-                      className={inputClassName}
-                    >
-                      {enquiryEventTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
                     <label htmlFor="enquiry-message" className={labelClassName}>
-                      Event Details <span className="text-champagne-dark">*</span>
+                      Enquiries <span className="text-champagne-dark">*</span>
                     </label>
                     <textarea
                       id="enquiry-message"
-                      name="message"
+                      name="enquiry"
                       required
                       rows={5}
-                      value={form.message}
-                      onChange={(e) => updateField("message", e.target.value)}
+                      value={form.enquiry}
+                      onChange={(e) => updateField("enquiry", e.target.value)}
                       className={`${inputClassName} resize-y min-h-[120px]`}
                       placeholder="Tell us about your event — date, guest count, services needed, and any other details..."
                     />
