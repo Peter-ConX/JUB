@@ -64,9 +64,8 @@ export default function EnquiryForm() {
       buildEnquiryMailSubject(payload.firstName, payload.lastName)
     );
     const mailBody = encodeURIComponent(bodyText);
+    // mailto goes directly to ikdany412@gmail.com (see primaryEmail in site-config)
     const mailtoUrl = `mailto:${primaryEmail}?subject=${mailSubject}&body=${mailBody}`;
-
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
     const mailLink = document.createElement("a");
     mailLink.href = mailtoUrl;
@@ -74,6 +73,11 @@ export default function EnquiryForm() {
     document.body.appendChild(mailLink);
     mailLink.click();
     document.body.removeChild(mailLink);
+
+    // WhatsApp: +234 803 719 4925
+    window.setTimeout(() => {
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }, 300);
 
     setSubmitted(true);
     setForm(initialForm);

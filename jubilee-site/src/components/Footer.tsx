@@ -61,7 +61,7 @@ export default function Footer() {
             <div className="mb-4 inline-flex rounded-full bg-navy/5 p-3 text-navy">
               <Phone className="h-5 w-5" />
             </div>
-            <h3 className="font-serif text-lg text-navy">Phone</h3>
+            <h3 className="font-serif text-lg text-navy">Phone (calls)</h3>
             <ul className="mt-2 space-y-1">
               {siteConfig.contact.phone.map((phone) => (
                 <li key={phone} className="text-sm text-navy/60">
