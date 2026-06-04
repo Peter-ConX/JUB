@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-cormorant",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const dmSans = DM_Sans({
@@ -16,26 +18,24 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://jubileeeventcentre.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://royalhall-demo.vercel.app"
   ),
-  title:
-    "Jubilee Event Center & Entertainment Hub | Weddings & Events in Idimu, Lagos",
+  title: "Royal Hall Event Centre | Luxury Events in Lekki, Lagos",
   description:
-    "Ultra modern event center in Idimu, Lagos for weddings, birthdays, seminars, conferences, and more. Rentals, planning, decoration, and security available.",
+    "Demonstration website — Royal Hall Event Centre. A premier Lekki destination for weddings, corporate galas, conferences, and high-end celebrations.",
   keywords: [
-    "Jubilee Event Center",
-    "event center Idimu Lagos",
-    "wedding venue Idimu",
-    "party chair rental Lagos",
-    "entertainment hub Lagos",
+    "Royal Hall Event Centre",
+    "luxury event venue Lekki",
+    "wedding venue Lagos",
+    "corporate events Lekki Phase 1",
   ],
   openGraph: {
-    title: "Jubilee Event Center & Entertainment Hub",
+    title: "Royal Hall Event Centre",
     description:
-      "Ultra modern events place for weddings, birthdays, conferences, fellowship meetings, and more in Idimu, Lagos.",
+      "Where extraordinary events find their signature setting — Lekki Phase 1, Lagos.",
     type: "website",
     locale: "en_NG",
-    images: ["/images/outside.jpeg"],
+    images: ["/images/venue-wedding.jpg"],
   },
   themeColor: "#0f172a",
 };
@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="antialiased overscroll-none">{children}</body>
     </html>
   );

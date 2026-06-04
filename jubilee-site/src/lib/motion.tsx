@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 48 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -22,14 +22,14 @@ export const staggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
+      staggerChildren: 0.14,
+      delayChildren: 0.12,
     },
   },
 };
 
 export const defaultTransition: Transition = {
-  duration: 0.7,
+  duration: 0.85,
   ease: [0.22, 1, 0.36, 1],
 };
 
@@ -72,9 +72,19 @@ export function useScrolled(threshold = 50) {
   return scrolled;
 }
 
-export function SectionLabel({ children }: { children: React.ReactNode }) {
+export function SectionLabel({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) {
   return (
-    <span className="mb-4 inline-block text-xs font-medium uppercase tracking-[0.35em] text-champagne">
+    <span
+      className={`label-luxury mb-6 inline-block ${
+        light ? "text-champagne" : "text-champagne-dark"
+      }`}
+    >
       {children}
     </span>
   );
@@ -91,7 +101,7 @@ export function SectionHeading({
 }) {
   return (
     <h2
-      className={`font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl ${
+      className={`display-hero text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${
         light ? "text-white" : "text-navy"
       } ${className}`}
     >

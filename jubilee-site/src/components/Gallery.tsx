@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Grid3X3 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { galleryItems } from "@/lib/site-config";
+import { galleryItems, siteConfig } from "@/lib/site-config";
 import {
   ScrollReveal,
   SectionHeading,
@@ -16,19 +16,18 @@ import {
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="relative bg-champagne-muted py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <ScrollReveal className="mb-16 text-center">
+    <section id="gallery" className="relative bg-champagne-muted py-32 lg:py-44">
+      <div className="mx-auto max-w-[90rem] px-6 lg:px-12">
+        <ScrollReveal className="mb-20 text-center lg:mb-28">
           <SectionLabel>Gallery</SectionLabel>
           <SectionHeading>
-            A Glimpse Of Our{" "}
-            <span className="italic text-champagne-dark">Beautiful Venue</span>
+            Moments Crafted With{" "}
+            <span className="italic text-champagne-dark">Intention</span>
           </SectionHeading>
-          <p className="mx-auto mt-4 max-w-2xl text-navy/60">
-            Explore the elegance and versatility of Jubilee Event Centre through our
-            venue showcase.
+          <p className="section-lead mx-auto mt-8 max-w-3xl font-light text-navy/60">
+            A curated glimpse into celebrations hosted at {siteConfig.nameShort}.
           </p>
-          <div className="section-divider mx-auto mt-8 w-24" />
+          <div className="section-divider mx-auto mt-10 w-32" />
         </ScrollReveal>
 
         <motion.div
@@ -36,25 +35,26 @@ export default function Gallery() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid auto-rows-[200px] grid-cols-2 gap-4 md:auto-rows-[220px] lg:grid-cols-4 lg:gap-5"
+          className="grid auto-rows-[220px] grid-cols-2 gap-5 md:auto-rows-[260px] lg:grid-cols-4 lg:gap-6"
         >
           {galleryItems.map((item, index) => (
             <motion.div
               key={`${item.label}-${index}`}
               variants={fadeUp}
               transition={{ ...defaultTransition, delay: index * 0.08 }}
-              className={`group relative overflow-hidden rounded-2xl ${item.span}`}
+              className={`group relative overflow-hidden ${item.span}`}
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
+                style={{ objectPosition: item.objectPosition ?? "center" }}
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-navy/0 transition-colors duration-500 group-hover:bg-navy/40" />
-              <div className="absolute inset-0 flex items-end p-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <span className="rounded-full bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-white backdrop-blur-sm">
+              <div className="absolute inset-0 bg-navy/0 transition-colors duration-500 group-hover:bg-navy/45" />
+              <div className="absolute inset-0 flex items-end p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100 lg:p-8">
+                <span className="label-luxury bg-white/10 px-5 py-2 text-white backdrop-blur-sm">
                   {item.label}
                 </span>
               </div>
@@ -62,13 +62,13 @@ export default function Gallery() {
           ))}
         </motion.div>
 
-        <ScrollReveal className="mt-12 text-center">
+        <ScrollReveal className="mt-16 text-center lg:mt-20">
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-4 text-sm font-semibold uppercase tracking-wider text-champagne transition-all hover:bg-navy-light hover:shadow-xl"
+            className="btn-luxury inline-flex items-center gap-3 rounded-none bg-navy text-champagne transition-all hover:bg-navy-light"
           >
-            <Grid3X3 className="h-4 w-4" />
-            View Full Gallery
+            <Grid3X3 className="h-5 w-5" />
+            Request A Private Tour
           </Link>
         </ScrollReveal>
       </div>

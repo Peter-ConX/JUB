@@ -1,43 +1,34 @@
-﻿# Jubilee Event Center & Entertainment Hub
+﻿# Royal Hall Event Centre — Demo Website
 
-Ultra-premium landing page for **Jubilee Event Center & Entertainment Hub** in Idimu, Lagos — weddings, birthdays, conferences, fellowship meetings, political gatherings, and more.
+**Demonstration / portfolio site** — not a live client website.
 
-## Contact
+Ultra-premium landing page showcasing luxury event centre branding for **Royal Hall Event Centre**, Lekki Phase 1, Lagos.
 
-- **Location:** 6, Lawrence Street Off Ejibo Road OPC Junction, Idimu, Lagos State
-- **Email:** ikdany412@gmail.com
-- **WhatsApp:** +234 803 719 4925
-- **Phone:** +234 906 610 7393
+## Demo Contact
 
-## Services
-
-- Party chair and table rentals
-- Event planning and decoration
-- Event security and bouncers
+- **Email:** okaforchi05@gmail.com
+- **WhatsApp:** 09035231402
+- **Address:** 12 Admiralty Way, Lekki Phase 1, Lagos State, Nigeria
 
 ## Tech Stack
 
 - Next.js 15 (App Router)
 - Tailwind CSS 4
 - Framer Motion
-- TypeScript
+- Cormorant Garamond + DM Sans typography
 
-## Getting Started
+## Run Locally
 
 ```bash
+cd jubilee-site
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Deploy (Vercel)
 
-## Deploy
+Set **Root Directory** to `jubilee-site`.
 
-1. Push to [GitHub](https://github.com/Peter-ConX/JUB.git)
-2. Import on [Vercel](https://vercel.com) with root directory `jubilee-site`
+## Assets
 
-## Customization
-
-Edit `src/lib/site-config.ts` for contact details, services, and event types.
-
-Replace images in `public/images/` as you add venue photos.
+Showcase images from `fake folder/` only. Background hero video retained from original venue assets.

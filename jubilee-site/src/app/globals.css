@@ -7,7 +7,7 @@
   --color-champagne: #f5e6c8;
   --color-champagne-dark: #e8d4a8;
   --color-champagne-muted: #faf3e4;
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-cormorant);
   --font-sans: var(--font-dm-sans);
 }
 
@@ -15,8 +15,14 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   overscroll-behavior-y: none;
-  /* Matches hero so nothing light shows if the browser rubber-bands */
   background-color: var(--color-navy);
+  font-size: 18px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
 }
 
 body {
@@ -26,8 +32,8 @@ body {
   overflow-x: hidden;
   overscroll-behavior: none;
   overscroll-behavior-y: none;
-  /* Reduces pull-to-refresh / bounce on mobile */
   touch-action: pan-y;
+  line-height: 1.65;
 }
 
 ::selection {
@@ -58,10 +64,10 @@ body {
 
 .hero-overlay {
   background: linear-gradient(
-    135deg,
-    color-mix(in srgb, #0f172a 85%, transparent) 0%,
-    color-mix(in srgb, #0f172a 55%, transparent) 50%,
-    color-mix(in srgb, #0f172a 75%, transparent) 100%
+    160deg,
+    color-mix(in srgb, #0f172a 92%, transparent) 0%,
+    color-mix(in srgb, #0f172a 45%, transparent) 45%,
+    color-mix(in srgb, #0f172a 88%, transparent) 100%
   );
 }
 
@@ -73,6 +79,55 @@ body {
     color-mix(in srgb, var(--color-champagne) 60%, transparent),
     transparent
   );
+}
+
+/* Luxury editorial typography */
+.display-hero {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.section-lead {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .section-lead {
+    font-size: 1.375rem;
+    line-height: 1.8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-lead {
+    font-size: 1.5rem;
+  }
+}
+
+.label-luxury {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.btn-luxury {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1.125rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .btn-luxury {
+    font-size: 0.875rem;
+    padding: 1.25rem 3rem;
+  }
 }
 
 @keyframes shimmer {

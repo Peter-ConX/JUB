@@ -1,23 +1,23 @@
-export const primaryEmail = "ikdany412@gmail.com" as const;
+export const primaryEmail = "okaforchi05@gmail.com" as const;
+
+export const isDemoSite = true;
 
 export const siteConfig = {
-  name: "Jubilee Event Center & Entertainment Hub",
-  nameShort: "Jubilee",
-  tagline: "An ultra modern events place",
+  name: "Royal Hall Event Centre",
+  nameShort: "Royal Hall",
+  tagline: "Where extraordinary events find their signature setting",
   description:
-    "Jubilee Event Center & Entertainment Hub is an ultra modern venue in Idimu, Lagos — hosting weddings, birthdays, conferences, fellowship meetings, political gatherings, and more, with full event support from planning to security.",
+    "Royal Hall Event Centre is a premier destination in Lekki for weddings, corporate galas, receptions, conferences, and high-end celebrations — crafted with the precision and poise of world-class hospitality.",
   location: {
-    address:
-      "6, Lawrence Street Off Ejibo Road OPC Junction, Idimu, Lagos State.",
-    mapQuery:
-      "6 Lawrence Street Off Ejibo Road OPC Junction Idimu Lagos Nigeria",
+    address: "12 Admiralty Way, Lekki Phase 1, Lagos State, Nigeria",
+    mapQuery: "12 Admiralty Way Lekki Phase 1 Lagos Nigeria",
   },
   contact: {
-    phone: ["+234 906 610 7393"],
-    whatsappDisplay: "+234 803 719 4925",
+    phone: [] as string[],
+    whatsappDisplay: "09035231402",
     email: [primaryEmail],
-    whatsapp: "2348037194925",
-    hours: "Mon – Sun: 8:00 AM – 10:00 PM",
+    whatsapp: "2349035231402",
+    hours: "Mon – Sun: 9:00 AM – 11:00 PM",
   },
   nav: [
     { label: "Home", href: "#home" },
@@ -29,154 +29,192 @@ export const siteConfig = {
   ],
 };
 
+/** All showcase imagery — sourced from demo assets only */
+export const images = {
+  wedding: "/images/venue-wedding.jpg",
+  celebration: "/images/venue-celebration.webp",
+  concert: "/images/venue-concert.jpg",
+} as const;
+
 export const eventCategories = [
   {
-    title: "Celebrations",
-    description: "Life milestones deserve a setting as memorable as the moment itself.",
+    title: "Weddings & Receptions",
+    description:
+      "Grand halls bathed in light, designed for vows, receptions, and evenings that linger in memory.",
     events: [
-      "Weddings",
-      "Birthdays",
-      "Child Naming",
-      "Marriage Anniversaries",
-      "Retirement Celebrations",
+      "White weddings & traditional ceremonies",
+      "Engagement & reception dinners",
+      "Anniversary galas",
     ],
     icon: "party",
   },
   {
-    title: "Corporate & Social",
-    description: "Professional spaces for meetings, rallies, and year-end gatherings.",
+    title: "Corporate & Conferences",
+    description:
+      "Boardroom poise meets ballroom scale — for summits, launches, and executive gatherings.",
     events: [
-      "Seminars",
-      "Political Party Meetings",
-      "End of Year Celebrations",
+      "Conferences & seminars",
+      "Product launches",
+      "End-of-year galas",
     ],
     icon: "briefcase",
   },
   {
-    title: "Faith & Conferences",
-    description: "Welcoming halls for prayer, fellowship, and large-scale conferences.",
-    events: ["Fellowship / Prayer Meetings", "Conferences", "And more"],
+    title: "Private Celebrations",
+    description:
+      "Intimate to extravagant — birthdays, naming ceremonies, and milestone moments.",
+    events: [
+      "Birthdays & naming ceremonies",
+      "Charity & fundraising evenings",
+      "Private concerts & entertainment",
+    ],
     icon: "users",
   },
 ];
 
 export const additionalServices = [
   {
-    title: "Party Rentals",
-    subtitle: "Chairs & Tables",
+    title: "Event Design",
+    subtitle: "& Styling",
     description:
-      "Quality party chairs and tables for hire — perfect for outdoor events, home parties, and hall extensions.",
-    icon: "armchair",
-  },
-  {
-    title: "Event Planning",
-    subtitle: "& Decoration",
-    description:
-      "From concept to decor, our team helps you design and execute events that look as polished as they feel.",
+      "Curated décor, floral concepts, and spatial design that elevate every detail to editorial standard.",
     icon: "palette",
   },
   {
-    title: "Event Security",
-    subtitle: "Bouncers & Staff",
+    title: "Premium Catering",
+    subtitle: "Partnerships",
     description:
-      "Trained security personnel and bouncers to keep your guests safe and your celebration running smoothly.",
+      "World-class culinary partners for plated dinners, cocktail receptions, and bespoke menus.",
+    icon: "armchair",
+  },
+  {
+    title: "Concierge",
+    subtitle: "& Coordination",
+    description:
+      "Dedicated event managers who orchestrate every moment with discretion and precision.",
     icon: "shield",
   },
 ];
 
 export const features = [
   {
-    title: "Spacious",
-    subtitle: "Event Halls",
+    title: "800+",
+    subtitle: "Guest Capacity",
     description:
-      "Versatile indoor spaces suited for weddings, conferences, parties, and large community gatherings.",
+      "Expansive ballrooms and breakout spaces for celebrations of commanding scale.",
     icon: "users",
   },
   {
-    title: "Fully",
-    subtitle: "Air Conditioned",
+    title: "Climate",
+    subtitle: "Controlled Halls",
     description:
-      "Climate-controlled interiors keep guests comfortable from arrival through the final toast.",
+      "Perfectly tempered interiors for guest comfort from arrival to final toast.",
     icon: "wind",
   },
   {
-    title: "Secure",
-    subtitle: "Parking",
+    title: "Valet",
+    subtitle: "& Secure Parking",
     description:
-      "Ample, well-lit parking with dedicated security for a seamless guest arrival experience.",
+      "Ample, attended parking for a seamless arrival experience befitting your guests.",
     icon: "car",
   },
   {
-    title: "Reliable",
-    subtitle: "Power Supply",
+    title: "Uninterrupted",
+    subtitle: "Power & AV",
     description:
-      "Backup power keeps your programme running flawlessly, day or night.",
+      "Professional sound, lighting, and backup power for flawless programmes.",
     icon: "zap",
   },
 ];
 
 export const whyChooseUs = [
   {
-    title: "Ultra Modern Venue",
+    title: "Lekki's Finest Address",
     description:
-      "A contemporary event center in Idimu designed for weddings, conferences, and celebrations of every scale.",
+      "A prestigious Admiralty Way location — accessible, secure, and unmistakably premium.",
+    icon: "map-pin",
+  },
+  {
+    title: "Cinematic Ambience",
+    description:
+      "Architectural grandeur and atmospheric lighting that photographs as beautifully as it feels.",
     icon: "sparkles",
   },
   {
-    title: "Full-Service Support",
+    title: "White-Glove Service",
     description:
-      "Rentals, planning, decoration, and security — everything you need under one trusted roof.",
+      "Hospitality-trained teams who anticipate needs before they are spoken.",
     icon: "heart-handshake",
   },
   {
-    title: "Experienced Team",
+    title: "Versatile Spaces",
     description:
-      "Dedicated coordinators who understand Lagos events and deliver with professionalism and care.",
+      "From intimate soirées to thousand-guest galas — one venue, infinite possibilities.",
     icon: "users-round",
-  },
-  {
-    title: "Prime Idimu Location",
-    description:
-      "Easy to find at Lawrence Street, OPC Junction — convenient for guests across Lagos.",
-    icon: "map-pin",
   },
 ];
 
 export const galleryItems = [
   {
-    src: "/images/outside.jpeg",
-    alt: "Jubilee Event Center exterior — modern navy and white architecture in Idimu",
-    label: "Exterior View",
+    src: images.wedding,
+    alt: "Luxury wedding reception at Royal Hall Event Centre",
+    label: "Wedding Reception",
     span: "col-span-2 row-span-2",
+    objectPosition: "center",
   },
   {
-    src: "/images/outside.jpeg",
-    alt: "Jubilee Event Center building facade",
-    label: "Building Facade",
+    src: images.celebration,
+    alt: "Intimate family celebration at Royal Hall",
+    label: "Private Celebration",
     span: "col-span-1 row-span-1",
+    objectPosition: "center",
   },
   {
-    src: "/images/outside.jpeg",
-    alt: "Jubilee Event Center entrance and perimeter",
-    label: "Entrance",
+    src: images.concert,
+    alt: "Live entertainment and concert at Royal Hall",
+    label: "Live Entertainment",
     span: "col-span-1 row-span-1",
+    objectPosition: "center top",
   },
   {
-    src: "/images/outside.jpeg",
-    alt: "Jubilee Event Center & Entertainment Hub venue overview",
-    label: "Venue Overview",
+    src: images.celebration,
+    alt: "Elegant gathering at Royal Hall Event Centre",
+    label: "Elegant Gatherings",
     span: "col-span-1 row-span-2",
+    objectPosition: "center",
   },
   {
-    src: "/images/outside.jpeg",
-    alt: "Jubilee Event Center — Lagos entertainment hub",
-    label: "Event Center",
+    src: images.wedding,
+    alt: "Grand ballroom setup at Royal Hall",
+    label: "Grand Ballroom",
     span: "col-span-2 row-span-1",
+    objectPosition: "left center",
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "Royal Hall transformed our wedding into something from a magazine. Every detail felt intentional, every moment felt royal.",
+    author: "Adaeze & Emeka",
+    event: "Wedding Reception",
+  },
+  {
+    quote:
+      "Our corporate gala exceeded every expectation. The space, the service, the atmosphere — simply world-class.",
+    author: "Lagos Finance Summit",
+    event: "Corporate Gala",
+  },
+  {
+    quote:
+      "From first walkthrough to final farewell, the team delivered hospitality you would expect at a five-star resort.",
+    author: "Mrs. Okonkwo",
+    event: "Anniversary Celebration",
   },
 ];
 
 export const defaultWhatsAppGreeting =
-  "Hello Jubilee Event Center & Entertainment Hub, I'd like to get in touch about your venue.";
+  "Hello Royal Hall Event Centre, I would like to enquire about hosting an event at your venue.";
 
 export function getWhatsAppUrl(text: string = defaultWhatsAppGreeting): string {
   return `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(text)}`;
@@ -191,7 +229,7 @@ export function buildEnquiryMessage(data: {
 }): string {
   const fullName = `${data.firstName} ${data.lastName}`.trim();
   return [
-    "Hello Jubilee Event Center & Entertainment Hub,",
+    "Hello Royal Hall Event Centre,",
     "",
     "I would like to make an enquiry:",
     "",
@@ -205,12 +243,12 @@ export function buildEnquiryMessage(data: {
 }
 
 export function buildEnquiryMailSubject(firstName: string, lastName: string): string {
-  return `Enquiry from ${firstName} ${lastName}`.trim();
+  return `Enquiry from ${firstName} ${lastName} — Royal Hall Event Centre`.trim();
 }
 
 export const aboutPoints = [
-  "Weddings, birthdays, naming ceremonies, anniversaries & retirement parties",
-  "Seminars, political meetings, end-of-year celebrations & conferences",
-  "Fellowship and prayer meetings in a welcoming, modern setting",
-  "Party chair & table rentals, planning, decoration & event security",
+  "Grand ballrooms for weddings, receptions & white-tie galas",
+  "Executive conference halls & corporate summit spaces",
+  "Birthdays, naming ceremonies & milestone celebrations",
+  "Full event design, catering partnerships & concierge coordination",
 ];

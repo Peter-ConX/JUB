@@ -29,9 +29,10 @@ const initialForm: FormFields = {
 };
 
 const inputClassName =
-  "w-full rounded-xl border border-navy/10 bg-white/80 px-4 py-3.5 text-sm text-navy placeholder:text-navy/35 outline-none transition-all focus:border-champagne-dark focus:bg-white focus:ring-2 focus:ring-champagne/40";
+  "w-full border border-navy/10 bg-white/80 px-5 py-4 text-base text-navy placeholder:text-navy/35 outline-none transition-all focus:border-champagne-dark focus:bg-white focus:ring-2 focus:ring-champagne/40";
 
-const labelClassName = "mb-1.5 block text-xs font-semibold uppercase tracking-wider text-navy/70";
+const labelClassName =
+  "label-luxury mb-2 block text-navy/60";
 
 export default function EnquiryForm() {
   const [form, setForm] = useState<FormFields>(initialForm);
@@ -64,7 +65,6 @@ export default function EnquiryForm() {
       buildEnquiryMailSubject(payload.firstName, payload.lastName)
     );
     const mailBody = encodeURIComponent(bodyText);
-    // mailto goes directly to ikdany412@gmail.com (see primaryEmail in site-config)
     const mailtoUrl = `mailto:${primaryEmail}?subject=${mailSubject}&body=${mailBody}`;
 
     const mailLink = document.createElement("a");
@@ -74,7 +74,6 @@ export default function EnquiryForm() {
     mailLink.click();
     document.body.removeChild(mailLink);
 
-    // WhatsApp: +234 803 719 4925
     window.setTimeout(() => {
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }, 300);
@@ -89,25 +88,25 @@ export default function EnquiryForm() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-b from-champagne-muted via-white to-champagne-muted py-24 lg:py-32"
+      className="relative overflow-hidden bg-gradient-to-b from-champagne-muted via-white to-champagne-muted py-32 lg:py-44"
     >
       <div className="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-champagne/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-navy/5 blur-3xl" />
 
-      <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
-        <ScrollReveal className="mb-12 text-center">
-          <SectionLabel>Get In Touch</SectionLabel>
+      <div className="relative mx-auto max-w-3xl px-6 lg:px-12">
+        <ScrollReveal className="mb-16 text-center">
+          <SectionLabel>Private Enquiries</SectionLabel>
           <SectionHeading>
-            Send An <span className="italic text-champagne-dark">Enquiry</span>
+            Reserve Your <span className="italic text-champagne-dark">Experience</span>
           </SectionHeading>
-          <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-navy/60 sm:text-base">
-            Share your details below — we&apos;ll open WhatsApp and your email app with your
-            enquiry pre-filled so you can send in one tap.
+          <p className="section-lead mx-auto mt-8 max-w-xl font-light text-navy/60">
+            Share your details — we&apos;ll open WhatsApp and your email app with your
+            enquiry pre-filled.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="glass-light rounded-3xl p-6 shadow-xl shadow-navy/5 sm:p-10">
+          <div className="glass-light p-8 shadow-xl shadow-navy/5 sm:p-12">
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div
@@ -223,9 +222,9 @@ export default function EnquiryForm() {
 
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-navy px-8 py-4 text-sm font-bold uppercase tracking-wider text-champagne transition-all hover:bg-navy-light hover:shadow-lg hover:shadow-navy/20"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                    className="btn-luxury group mt-4 flex w-full items-center justify-center gap-3 rounded-none bg-navy text-champagne transition-all hover:bg-navy-light"
                   >
                     <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     Submit Enquiry

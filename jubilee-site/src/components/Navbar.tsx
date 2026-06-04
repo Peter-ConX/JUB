@@ -17,26 +17,26 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass py-3 shadow-lg shadow-navy/20" : "bg-transparent py-5"
+        className={`fixed inset-x-0 top-[2.125rem] z-50 transition-all duration-500 ${
+          scrolled ? "glass py-4 shadow-lg shadow-navy/20" : "bg-transparent py-6 lg:py-8"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-          <Link href="#home" className="group flex flex-col leading-tight">
-            <span className="font-serif text-xl tracking-wide text-champagne transition-colors group-hover:text-white sm:text-2xl">
+        <div className="mx-auto flex max-w-[90rem] items-center justify-between px-6 lg:px-12">
+          <Link href="#home" className="group flex flex-col leading-none">
+            <span className="font-serif text-2xl font-light tracking-wide text-champagne transition-colors group-hover:text-white sm:text-3xl">
               {siteConfig.nameShort}
             </span>
-            <span className="max-w-[11rem] text-[9px] font-medium uppercase leading-snug tracking-[0.18em] text-white/70 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
-              Event Center &amp; Entertainment Hub
+            <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.28em] text-white/60 sm:text-[11px]">
+              Event Centre
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-10 lg:flex">
             {siteConfig.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-xs font-medium uppercase tracking-[0.2em] text-white/80 transition-colors hover:text-champagne"
+                className="text-[13px] font-medium uppercase tracking-[0.22em] text-white/75 transition-colors hover:text-champagne"
               >
                 {item.label}
               </Link>
@@ -48,19 +48,19 @@ export default function Navbar() {
               href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 rounded-full border border-champagne/50 bg-champagne/10 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-champagne transition-all hover:border-champagne hover:bg-champagne hover:text-navy sm:inline-flex"
+              className="btn-luxury hidden items-center gap-2 rounded-none border border-champagne/50 bg-champagne/10 text-champagne transition-all hover:bg-champagne hover:text-navy lg:inline-flex"
             >
               <CalendarDays className="h-4 w-4" />
-              Book a Tour
+              Enquire
             </Link>
 
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="inline-flex rounded-lg p-2 text-white md:hidden"
+              className="inline-flex rounded-lg p-2 text-white lg:hidden"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
@@ -68,10 +68,14 @@ export default function Navbar() {
 
       <motion.div
         initial={false}
-        animate={mobileOpen ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
-        className="fixed inset-0 z-40 glass md:hidden"
+        animate={
+          mobileOpen
+            ? { opacity: 1, pointerEvents: "auto" as const }
+            : { opacity: 0, pointerEvents: "none" as const }
+        }
+        className="fixed inset-0 z-40 glass lg:hidden"
       >
-        <nav className="flex h-full flex-col items-center justify-center gap-8">
+        <nav className="flex h-full flex-col items-center justify-center gap-10">
           {siteConfig.nav.map((item, i) => (
             <motion.div
               key={item.href}
@@ -82,7 +86,7 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="font-serif text-2xl text-white transition-colors hover:text-champagne"
+                className="font-serif text-3xl font-light text-white transition-colors hover:text-champagne"
               >
                 {item.label}
               </Link>
@@ -93,10 +97,10 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-champagne px-8 py-3 text-sm font-semibold uppercase tracking-wider text-navy"
+            className="btn-luxury mt-4 inline-flex items-center gap-2 rounded-none bg-champagne text-navy"
           >
             <CalendarDays className="h-4 w-4" />
-            Book a Tour
+            Enquire
           </Link>
         </nav>
       </motion.div>

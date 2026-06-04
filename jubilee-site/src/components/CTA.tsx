@@ -10,7 +10,7 @@ export default function CTA() {
   const whatsappUrl = getWhatsAppUrl();
 
   return (
-    <section className="relative overflow-hidden bg-navy py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-navy py-32 lg:py-44">
       <div className="absolute inset-0 opacity-[0.04]">
         <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -23,31 +23,31 @@ export default function CTA() {
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+      <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-12">
         <ScrollReveal>
           <SectionHeading light className="text-center">
-            Ready To Host Your Next Event?
+            Begin Your Celebration
           </SectionHeading>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
-            Let&apos;s help you create memories that last a lifetime. Reach out today
-            at our Idimu venue — weddings, parties, conferences, and more.
+          <p className="section-lead mx-auto mt-10 max-w-2xl font-light text-white/75">
+            Private tours available by appointment. Reach out to discuss your
+            vision — our team responds with the discretion you deserve.
           </p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-10"
+            className="mt-14"
           >
             <Link
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full bg-champagne px-10 py-5 text-sm font-bold uppercase tracking-wider text-navy transition-all hover:bg-white hover:shadow-2xl hover:shadow-champagne/20"
+              className="btn-luxury group inline-flex items-center gap-4 rounded-none bg-champagne text-navy transition-all hover:bg-white"
             >
               <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />
-              Book Now on WhatsApp
+              Message on WhatsApp
             </Link>
           </motion.div>
         </ScrollReveal>
