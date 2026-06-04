@@ -15,3 +15,11 @@ Thumbs.db
 **/.next/
 **/out/
 **/.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Stray files from local root runs (app is in jubilee-site/)
+/node_modules/
+/.next/
