@@ -13,6 +13,10 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  /* Matches hero so nothing light shows if the browser rubber-bands */
+  background-color: var(--color-navy);
 }
 
 body {
@@ -20,6 +24,10 @@ body {
   color: var(--color-navy);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  /* Reduces pull-to-refresh / bounce on mobile */
+  touch-action: pan-y;
 }
 
 ::selection {

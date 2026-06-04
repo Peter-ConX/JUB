@@ -2,14 +2,19 @@
 
 The Next.js app lives in the **`jubilee-site`** folder, not the repo root.
 
-## In Vercel Dashboard
+If you see **404: NOT_FOUND** after a deploy, the Root Directory was reset or left blank.
+
+## In Vercel Dashboard (required)
 
 1. Open your project → **Settings** → **General**
-2. Find **Root Directory**
-3. Set it to: `jubilee-site`
-4. Save, then go to **Deployments** → **Redeploy** (latest commit)
+2. Find **Root Directory** → click **Edit**
+3. Enter exactly: `jubilee-site` (no slash)
+4. **Save**
+5. **Deployments** → ⋮ on latest → **Redeploy** → check **Use existing Build Cache** off if it still fails
 
-Framework should auto-detect **Next.js**.
+Framework must be **Next.js**. Build command: `npm run build` (default).
+
+**Do not** set Root Directory to empty or `/` — that causes 404.
 
 ## Run locally
 

@@ -11,7 +11,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overscroll-none">
       <Navbar />
       <Hero />
       <Features />

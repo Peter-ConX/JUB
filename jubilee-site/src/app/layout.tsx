@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     images: ["/images/outside.jpeg"],
   },
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -46,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased overscroll-none">{children}</body>
     </html>
   );
 }
