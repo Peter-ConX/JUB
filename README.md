@@ -34,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Deploy
 
 1. Push to [GitHub](https://github.com/Peter-ConX/JUB.git)
-2. Import on [Vercel](https://vercel.com) — leave **Root Directory** blank (repo root)
+2. Import on [Vercel](https://vercel.com) with root directory `jubilee-site`
 
 ## Customization
 
